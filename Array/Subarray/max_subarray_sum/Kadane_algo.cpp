@@ -16,7 +16,7 @@ void kadane_algo(int *arr, int n ){
 }
 
 int main(){
-    int arr[6]={2,-3,6,-5,4,2};   //{-2,-3,-6,-5,-4,-2};
+    int arr[6]={6,-7,2,3,4,5};   //{-2,-3,-6,-5,-4,-2};
     int n=6;
     kadane_algo(arr,n);
     return 0;

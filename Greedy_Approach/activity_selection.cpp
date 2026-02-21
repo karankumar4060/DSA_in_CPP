@@ -7,24 +7,56 @@
 // sort activity on "end" time not start time
 
 
-#include <iostream>
-#include <vector>
 
+#include <iostream>
+#include <climits>
+#include <vector>
 using namespace std;
 
-int maxactivity(vector<int> start, vector<int> end){
+int maxactivity(vector<int> start, vector<int>end){
     int count=1;
-    int current_time=end[0];
+    int endtime=end[0];
 
-    for(int i=1; i<start.size(); i++){
-        if(start[i]>= current_time){
+    for(int i=1; i<end.size(); i++){
+        if(start[i]>=endtime){
             count++;
-            current_time=end[i];
+            endtime=end[i];
         }
     }
-
     return count;
+     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// #include <iostream>
+// #include <vector>
+
+// using namespace std;
+
+// int maxactivity(vector<int> start, vector<int> end){
+//     int count=1;
+//     int current_time=end[0];
+
+//     for(int i=1; i<start.size(); i++){
+//         if(start[i]>= current_time){
+//             count++;
+//             current_time=end[i];
+//         }
+//     }
+
+//     return count;
+// }
 
 
 
