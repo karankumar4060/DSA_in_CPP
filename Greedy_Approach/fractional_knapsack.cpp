@@ -7,39 +7,67 @@
 
 using namespace std;
 
-bool compare(pair<double, int>p1, pair<double, int>p2){
-    return p1.first> p2.first;
+bool compare(pair<double, int> p1, pair<double, int>p2){
+    p1.first<p2.first;
 }
-
-int fractionalknapsack(vector<int> val, vector<int> wt, int w){
+int fractionalknapsack(vector<int>val, vector<int>wt, int w){
     int n=val.size();
-    vector<pair<double, int>> ratio(n, make_pair(0.0 , 0));  //pair(ratio, ind) -> (double, int)
-   
 
+    vector<pair<double ,int>> ratio(n, make_pair(0.0, 0));
     for(int i=0; i<n; i++){
-        double r=val[i]/(double)wt[i];   //casting
-        ratio[i]= make_pair(r,i);
+        double r=(double)val[i]/wt[i];
+        ratio[i]=make_pair(r, wt[i]);
     }
-
-    sort(ratio.begin(), ratio.end(), compare);   //O(nlogn)
-
-    int ans=0; 
+    sort(ratio.begin(), ratio.end(), compare);
+    int count=0;
     for(int i=0; i<n; i++){
-        int idx= ratio[i].second;
-
-        if(wt[idx]<= w){
-            ans=ans+val[idx];
-            w=w- wt[idx];
+        if(w>ratio[i].second){
+            count=count+(ratio[i].first*ratio[i].second);
+            w=w-ratio[i].second;
         }else{
-            ans += ratio[i].first * w;
-            w =0;
+            count=count+(ratio[i].first*w);
             break;
-        }
+        }        
     }
 
-    cout<< "max value = "<<ans <<endl;
-    return ans;
+    cout<< "max value = "<<count<<endl;
+    // return ans;
+    return count;
 }
+
+
+// bool compare(pair<double, int>p1, pair<double, int>p2){
+//     return p1.first> p2.first;
+// }
+
+// int fractionalknapsack(vector<int> val, vector<int> wt, int w){
+//     int n=val.size();
+//     vector<pair<double, int>> ratio(n, make_pair(0.0 , 0));  //pair(ratio, ind) -> (double, int)
+   
+//     for(int i=0; i<n; i++){
+//         double r=val[i]/(double)wt[i];   //casting
+//         ratio[i]= make_pair(r,i);
+//     }
+
+//     sort(ratio.begin(), ratio.end(), compare);   //O(nlogn)
+
+//     int ans=0; 
+//     for(int i=0; i<n; i++){
+//         int idx= ratio[i].second;
+
+//         if(wt[idx]<= w){
+//             ans=ans+val[idx];
+//             w=w- wt[idx];
+//         }else{
+//             ans += ratio[i].first * w;
+//             w =0;
+//             break;
+//         }
+//     }
+
+//     cout<< "max value = "<<ans <<endl;
+//     return ans;
+// }
 
 int main(){
     vector<int> val={60, 100, 120};

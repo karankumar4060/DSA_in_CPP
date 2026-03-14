@@ -93,35 +93,156 @@ using namespace std;
 
 
 
+// min coin
+
+// int num_coin(vector<int> coins, int value){
+
+//     int n=coins.size();
+//     int ans=0;
+//     int v=value;
+
+//     for(int i=n-1; i>=0 && v>0; i--){
+//         if(coins[i]<=v){
+//             ans=ans+(v/coins[i]);
+//             v=v%coins[i];
+//         }
+//     }
+//     cout<<ans;
+
+//     return ans;
+// }
 
 
-int num_coin(vector<int> coins, int value){
 
-    int n=coins.size();
-    int ans=0;
-    int v=value;
+// int main(){
+//     vector<int> coins={1,2,5,10,20,50,100,500,2000};
 
-    for(int i=n-1; i>=0 && v>0; i--){
-        if(coins[i]<=v){
-            ans=ans+(v/coins[i]);
-            v=v%coins[i];
-        }
+//     int value=1099;
+
+//     num_coin(coins, value);
+//     // cout<<a;
+
+//     return 0;
+// }
+
+
+
+
+
+
+
+
+
+
+
+// class Node{
+
+//     public:
+//     int data;
+//     Node* left;
+//     Node* right;
+    
+//     Node(int data){
+//         this->data=data;
+//         left=right=NULL;
+//     }
+// };
+
+// static int idx=-1;
+
+// Node* buildtree(vector<int> nodess){
+//     idx++;
+
+//     if(nodess[idx]==-1){
+//         return NULL;
+//     }
+
+//     Node* currnode = new Node(nodess[idx]);
+//     currnode->left =buildtree(nodess);
+//     currnode->right =buildtree(nodess);
+
+//     return currnode;
+// }
+
+// int main(){
+//     vector<int> nodes={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
+//     Node* root=buildtree(nodes);
+
+//     cout<<"root="<<root->data<<endl;
+//     return 0;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// class Node{
+//     public:
+//     Node* left;
+//     Node* right;
+//     int data;
+
+//     Node(int data){
+//         this->data=data;
+//         left=right=NULL;
+//     }
+// };
+
+// static int idx=-1;
+
+// Node* buildtree(vector<int> nodess){
+//     idx++;
+
+//     if(nodess[idx]==-1){
+//         return NULL;
+//     }
+
+//     Node* currnode = new Node(nodess[idx]);
+//     currnode->left = buildtree(nodess);
+//     currnode->right =buildtree(nodess);
+
+//     return currnode;
+// }
+
+// int main(){
+
+//     vector<int> nodes={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
+
+//     Node* root=buildtree(nodes);
+//     cout<<root->data;
+
+//     return 0;
+// }
+
+
+
+
+
+int main() { 
+    int a = 5;
+    if (++a*5 <= 25) {
+        cout<<"Hello\n";
+        cout<<a;
+    } else {
+        cout<<"Bye\n";
+        cout<<a;
     }
-    cout<<ans;
-
-    return ans;
-}
-
-
-
-int main(){
-    vector<int> coins={1,2,5,10,20,50,100,500,2000};
-
-    int value=1099;
-
-    num_coin(coins, value);
-    // cout<<a;
-
     return 0;
 }
+
+
 

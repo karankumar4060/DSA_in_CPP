@@ -65,7 +65,7 @@
 
 
 
-// maximize the total profit if only one job can be scheduled at a time.
+// maximize the total profit if only one job can be scheduled at a time and also say sequences .
 
 
 #include <iostream>
@@ -94,9 +94,10 @@ int maxprofit(vector<pair<int, int>>pairs){   //O(nlogn)
 
     for(int i=0; i<n; i++){
         jobs.emplace_back(i, pairs[i].first, pairs[i].second); // idx,deadline, profit
+        // here i use emplace_back it act like push_back , in bush_back we need to create a new object that why i use this automally pass in in constructor
     }
 
-    sort(jobs.begin(), jobs.end(), [](job &a, job &b){     //lamdb function, capture list, empty capture list
+    sort(jobs.begin(), jobs.end(), [](job &a, job &b){  //[] is rmpty list   //()lamdb function, capture list, 
         return a.profit > b.profit;
 
     });  // desecending order on basis of profit

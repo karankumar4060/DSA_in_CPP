@@ -15,17 +15,30 @@ using namespace std;
 
 int maxactivity(vector<int> start, vector<int>end){
     int count=1;
-    int endtime=end[0];
-
+    int endd=end[0];
     for(int i=1; i<end.size(); i++){
-        if(start[i]>=endtime){
+        if(endd<=start[i]){
             count++;
-            endtime=end[i];
+            endd=end[i];
         }
     }
     return count;
-     
 }
+
+
+// int maxactivity(vector<int> start, vector<int>end){
+//     int count=1;
+//     int endtime=end[0];
+
+//     for(int i=1; i<end.size(); i++){
+//         if(start[i]>=endtime){
+//             count++;
+//             endtime=end[i];
+//         }
+//     }
+//     return count;
+     
+// }
 
 
 

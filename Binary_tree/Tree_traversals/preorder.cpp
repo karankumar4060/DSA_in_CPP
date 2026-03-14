@@ -13,7 +13,6 @@ class node{
     node(int data){
         this->data = data;
         left = right = NULL;
-
     }
 };
 
